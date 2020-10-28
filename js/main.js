@@ -44,9 +44,10 @@ function authorized() {
     userName.style.display = '';
     buttonOut.style.display = '';
     buttonOut.removeEventListener('click', logOut);
-    userName.classList.toggle('loged');
     checkAuth();
+    userName.classList.remove('loged');
   }
+    userName.classList.toggle('loged');
     userName.textContent = login;
     buttonAuth.style.display = 'none';
     userName.style.display = 'inline';
@@ -57,12 +58,10 @@ function notAuthorized() {
   function logIn(event) {
     event.preventDefault();
     if (loginInput.value.trim(), passwordInput.value.trim()) {
-        login = loginInput.value;
-        password = passwordInput.value;
-        localStorage.setItem('gloDelivery', login);
-        userName.classList.toggle('loged');
-        toggleModalAuth();
-   
+    login = loginInput.value;
+    password = passwordInput.value;
+    localStorage.setItem('gloDelivery', login);
+    toggleModalAuth();
     buttonAuth.removeEventListener('click', toggleModalAuth);
     closeAuth.removeEventListener('click', toggleModalAuth);
     loginForm.removeEventListener('submit', logIn);
