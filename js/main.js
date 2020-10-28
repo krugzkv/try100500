@@ -18,8 +18,8 @@ const menu = document.querySelector('.menu');
 const logo = document.querySelector('.logo');
 const cardsMenu = document.querySelector('.cards-menu');
 
-let login = localStorage.getItem('login');
-let password = localStorage.getItem('password');
+let login = localStorage.getItem('gloDelivery');
+let password ;
 
 function toggleModal() {
   modal.classList.toggle('is-open');
@@ -44,7 +44,7 @@ function authorized() {
     userName.style.display = '';
     buttonOut.style.display = '';
     buttonOut.removeEventListener('click', logOut);
-     userName.classList.toggle('loged');
+    userName.classList.toggle('loged');
     checkAuth();
   }
     userName.textContent = login;
