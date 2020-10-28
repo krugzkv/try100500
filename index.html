@@ -10,6 +10,11 @@
     />
     <link rel="stylesheet" href="css/normalize.css" />
     <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper@6.3.4/swiper-bundle.min.css"
+    />
+    <script src="https://unpkg.com/swiper@6.3.4/swiper-bundle.min.js"></script>
   </head>
   <body>
     <div class="container">
@@ -45,33 +50,37 @@
 
     <main class="main">
       <div class="container">
-        <section class="container-promo">
-          <section class="promo pizza">
-            <h1 class="promo-title">Онлайн-сервис <br />доставки еды на дом</h1>
+        <div class="swiper-container">
+        <section class="container-promo swiper-wrapper">
+          <section class="promo pizza swiper-slide">
+            <h2 class="promo-title">Онлайн-сервис <br />доставки еды на дом</h1>
             <p class="promo-text">
               Блюда из любимого ресторана привезет курьер в перчатках, маске и с
               антисептиком
             </p>
           </section>
-          <!-- <section class="promo kebab">
-					<h1 class="promo-title">Шашлыки на майские <br> со скидкой 35%</h1>
+          <section class="promo kebab swiper-slide">
+					<h2 class="promo-title">Шашлыки на майские <br> со скидкой 35%</h1>
 					<p class="promo-text">
 						Закажите шашлыки в любом ресторане до 10 мая и получите скидку по промокоду OMAGAD
 					</p>
 				</section>
-				<section class="promo vegetables">
-					<h1 class="promo-title">Скидка 20% на всю еду <br> по промокоду LOVE.JS</h1>
+				<section class="promo vegetables swiper-slide">
+					<h2 class="promo-title">Скидка 20% на всю еду <br> по промокоду LOVE.JS</h1>
 					<p class="promo-text">
 						Блюдо из ресторана привезут вместе с двумя подарочными книгами по фронтенду
 					</p>
 				</section>
-				<section class="promo sushi">
-					<h1 class="promo-title">Сеты со скидкой до 30% <br> в ресторанах</h1>
+				<section class="promo sushi swiper-slide">
+					<h2 class="promo-title">Сеты со скидкой до 30% <br> в ресторанах</h1>
 					<p class="promo-text">
 						Скидки на сеты до 30 мая по промокоду DADADA
 					</p>
-				</section> -->
+				</section> 
         </section>
+        <div class="swiper-scrollbar"></div>
+
+        </div>
         <section class="restaurants">
           <div class="section-heading">
             <h2 class="section-title">Рестораны</h2>
@@ -200,11 +209,11 @@
             <legend class="modal-title">Авторизация</legend>
             <label class="label-auth">
               <span>Логин</span>
-              <input id="login" type="text" class="login-name" />
+              <input id="login" type="text" class="login"/>
             </label>
             <label class="label-auth">
               <span>Пароль</span>
-              <input id="password" type="current-password" />
+              <input id="password" type="current-password" class="password"/>
             </label>
           </fieldset>
           <!-- /.modal-body -->
