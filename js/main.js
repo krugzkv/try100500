@@ -46,6 +46,9 @@ function authorized() {
     buttonOut.removeEventListener('click', logOut);
     checkAuth();
     userName.classList.remove('loged');
+    containerPromo.classList.remove('hide');
+    restaurants.classList.remove('hide');
+    menu.classList.add('hide');
   }
     userName.classList.toggle('loged');
     userName.textContent = login;
@@ -53,7 +56,7 @@ function authorized() {
     userName.style.display = 'inline';
     buttonOut.style.display = 'block';
     buttonOut.addEventListener('click', logOut);
-}
+  }
 function notAuthorized() {
   function logIn(event) {
     event.preventDefault();
@@ -67,6 +70,7 @@ function notAuthorized() {
     loginForm.removeEventListener('submit', logIn);
     loginForm.reset();
     checkAuth();
+    
     }
     else{
       loginInput.style.borderColor = 'red';
