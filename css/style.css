@@ -168,6 +168,7 @@ button {
   box-shadow: 0 7px 12px rgba(158, 158, 163, 0.1);
   border-radius: 10px;
   padding: 68px 70px;
+  min-height: 350px;
 }
 
 .pizza {
