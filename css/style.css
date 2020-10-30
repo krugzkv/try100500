@@ -99,7 +99,12 @@ button {
 .button-icon {
   margin-right: 6px;
 }
-
+.button-primary .button-out-svg {
+  display: none;
+  width: 24px;
+  height: 24px;
+  color: #fff;
+}
 .button-card-text {
   margin-right: 10px;
 }
@@ -144,7 +149,6 @@ button {
 
 .button-cart {
   display: none;
-  margin: 0 5px;
 }
 
 .button-out {
@@ -261,7 +265,7 @@ button {
 
 .card-text {
   padding: 20px 23px 35px;
-  min-height: 275px;
+  min-height: 345px;
   display: flex;
   flex-direction: column;
 }
@@ -662,6 +666,15 @@ button {
 }
 
 @media (max-width: 768px) {
+  .button-text {
+    display: none;
+  }
+  .button-primary .button-out-svg {
+    display: flex;
+    width: 18px;
+    height: 18px;
+  }
+
   .container {
     max-width: 560px;
   }
@@ -716,7 +729,7 @@ button {
   }
 }
 
-@media (max-width: 578px) {
+@media (max-width: 678px) {
   .container {
     width: 90%;
   }
@@ -786,11 +799,7 @@ button {
   }
 }
 
-@media (max-width: 480px) {
-  .button-text {
-    display: none;
-  }
-
+@media (max-width: 600px) {
   .button-icon {
     margin: 0;
   }
@@ -807,17 +816,6 @@ button {
   .button {
     min-height: 40px;
     padding: 5px 12px;
-  }
-
-  .button-out-svg {
-    width: 24px;
-    height: 24px;
-    background-color: #fff;
-    -webkit-mask: url(../img/icon/logout.svg) no-repeat 50% 50%;
-    mask: url(../img/icon/logout.svg) no-repeat 50% 50%;
-    background-repeat: no-repeat;
-    -webkit-mask-size: 20px;
-    mask-size: 20px;
   }
 
   .promo {
