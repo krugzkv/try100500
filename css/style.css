@@ -104,10 +104,6 @@ button {
   display: none;
   width: 24px;
   height: 24px;
-  color: #fff;
-  -webkit-mask: url("../img/icon/logout.svg") no-repeat 50% 50%;
-  mask: url("../img/icon/logout.svg") no-repeat 50% 50%;
-  background-repeat: no-repeat;
 }
 .button-card-text {
   margin-right: 10px;
@@ -445,12 +441,13 @@ button {
   background: #ffffff;
   border-radius: 5px;
   margin: auto;
-  padding: 40px 45px;
+  padding: 20px 25px;
 }
 
 .modal-dialog-auth {
   width: auto;
   position: relative;
+  padding-bottom: 5px;
 }
 
 .label-auth {
@@ -507,12 +504,12 @@ button {
   border: none;
   background-color: transparent;
   position: absolute;
-  top: 10px;
-  right: 20px;
+  top: 1px;
+  right: 30px;
 }
 
 .modal-body {
-  margin-bottom: 22px;
+  margin-bottom: 5px;
 }
 
 .food-row {
@@ -819,6 +816,9 @@ button {
     padding: 20px;
   }
 
+  .modal-dialog {
+    padding: 10px 15px;
+  }
   .section-heading {
     flex-wrap: wrap;
   }

@@ -20,7 +20,6 @@ const restaurants = document.querySelector('.restaurants');
 const menu = document.querySelector('.menu');
 const logo = document.querySelector('.logo');
 const cardsMenu = document.querySelector('.cards-menu');
-
 const restaurantTitle = document.querySelector('.restaurant-title');
 const restaurantRating = document.querySelector('.rating');
 const restaurantPrice = document.querySelector('.price');
@@ -42,7 +41,6 @@ const getData = async function (url) {
   }
   return await response.json();
 };
-
 function validName(str) {
   const regName = /^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$/
   return regName.test(str);
@@ -209,7 +207,6 @@ function openGoods(event) {
     toggleModalAuth();
   }
 }
-
 function addToCart(event) {
   const target = event.target;
   const buttonAddToCart = target.closest('.button-add-cart');
@@ -233,8 +230,6 @@ function addToCart(event) {
   };
   localStorage.setItem('cart', JSON.stringify(cart));
 };
-
-
 function renderCart() {
   modalBody.textContent = '';
   cart.forEach(function ({ id, title, cost, count }) {
@@ -255,7 +250,6 @@ function renderCart() {
   modalPrice.textContent = totalPrice + ' ₽';
 
 }
-
 function changeCount(event) {
   const target = event.target;
 
@@ -273,11 +267,7 @@ function changeCount(event) {
     renderCart();
   };
 };
-
-
 function init() {
-
-  console.log(localStorage.getItem(cart));
   inputSearch.addEventListener('keypress', function (event) {
     if (event.charCode === 13) {
       const value = event.target.value.trim();
@@ -317,7 +307,6 @@ function init() {
         })
     }
   });
-
   modalBody.addEventListener('click', changeCount);
   buttonClearCart.addEventListener('click', function () {
     cart.length = 0;
@@ -338,9 +327,7 @@ function init() {
     restaurants.classList.remove('hide');
     menu.classList.add('hide');
   })
-
   checkAuth();
-
   new Swiper('.swiper-container', {
     effect: 'coverflow',
     loop: true,
