@@ -748,10 +748,6 @@ button {
     flex: 1;
   }
 
-  .promo {
-    background-image: none;
-  }
-
   .promo-title {
     margin-bottom: 10px;
   }
