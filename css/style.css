@@ -104,6 +104,9 @@ button {
   width: 24px;
   height: 24px;
   color: #fff;
+  -webkit-mask: url("../img/icon/logout.svg") no-repeat 50% 50%;
+  mask: url("../img/icon/logout.svg") no-repeat 50% 50%;
+  background-repeat: no-repeat;
 }
 .button-card-text {
   margin-right: 10px;
@@ -671,8 +674,6 @@ button {
   }
   .button-primary .button-out-svg {
     display: flex;
-    width: 18px;
-    height: 18px;
   }
 
   .container {
@@ -811,11 +812,6 @@ button {
   .buttons {
     flex-wrap: wrap;
     margin-left: auto;
-  }
-
-  .button {
-    min-height: 40px;
-    padding: 5px 12px;
   }
 
   .promo {
