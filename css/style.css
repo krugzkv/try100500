@@ -40,7 +40,8 @@ button {
   background-position: left 11px center;
 }
 
-.address {
+.address,
+.search {
   flex: 0.8;
 }
 
@@ -49,12 +50,8 @@ button {
   background-image: url(../img/icon/home.svg);
 }
 
-.search {
-  margin-left: auto;
-}
-
 .input-search {
-  width: 300px;
+  width: 100%;
   background-image: url(../img/icon/search.svg);
 }
 
@@ -223,6 +220,7 @@ button {
 .section-heading {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   margin-bottom: 44px;
   margin-top: 16px;
 }
@@ -733,7 +731,8 @@ button {
     width: 90%;
   }
 
-  .address {
+  .address,
+  .search {
     min-width: 100%;
     order: 1;
   }
