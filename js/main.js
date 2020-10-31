@@ -356,6 +356,7 @@ function init() {
               restaurantPrice.textContent = '';
               restaurantCategory.textContent = 'Все кухни';
               resultSearch.forEach(createCardGoods);
+
             })
         })
       })
