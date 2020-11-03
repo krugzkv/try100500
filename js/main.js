@@ -379,10 +379,11 @@ function init() {
   close.addEventListener("click", toggleModal);
   cardsRestaurants.addEventListener('click', openGoods);
   logo.addEventListener('click', function () {
-    swiperContainer.classList.remove('hide');
+    /*swiperContainer.classList.remove('hide');
     swiper.init();
     restaurants.classList.remove('hide');
-    menu.classList.add('hide');
+    menu.classList.add('hide');*/
+    location.reload();
   })
   checkAuth();
 };
