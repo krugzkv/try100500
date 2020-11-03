@@ -88,6 +88,17 @@ function validPassword(str) {
 }
 function toggleModal() {
   modal.classList.toggle('is-open');
+  if (modal.classList.contains('is-open')) {
+    disabledScroll();
+  }
+  else {
+    enabledScroll();
+  };
+  modal.addEventListener('click', function (event) {
+    if (event.target.classList.contains('is-open')) {
+      toggleModal();
+    };
+  });
 }
 function toggleModalAuth() {
   modalAuth.classList.toggle('is-open');
