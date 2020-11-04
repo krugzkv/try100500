@@ -21,7 +21,7 @@ const swiper = new Swiper('.swiper-container', {
   },
 });
 
-
+const localCart = document.querySelector('.cart-button');
 const RED_COLOR = '#ff0000';
 const address = document.querySelector("#address");
 const search = document.querySelector("#search");
@@ -70,9 +70,8 @@ const getData = async function (url) {
 function downloadCart() {
   if (localStorage.getItem(`gloDelivery_${login}`)) {
     const data = JSON.parse(localStorage.getItem(`gloDelivery_${login}`));
-    data.forEach(function (item) {
-      cart.push(...data);
-    })
+    cart.push(...data);
+
   }
 }
 function saveCart() {
@@ -170,6 +169,7 @@ function notAuthorized() {
   })
 }
 function checkAuth() {
+
   if (login) {
     authorized();
   }
@@ -259,6 +259,7 @@ function openGoods(event) {
   }
 }
 function addToCart(event) {
+  saveCart();
   const target = event.target;
   const buttonAddToCart = target.closest('.button-add-cart');
   if (buttonAddToCart) {
@@ -277,11 +278,10 @@ function addToCart(event) {
       cost,
       count: 1
     });
-    console.log(cart);
   };
-  saveCart();
 };
 function renderCart() {
+  saveCart();
   modalBody.textContent = '';
   cart.forEach(function ({ id, title, cost, count }) {
     const itemCart = `
@@ -299,7 +299,7 @@ function renderCart() {
   });
   const totalPrice = cart.reduce(function (result, item) { return result + (parseFloat(item.cost)) * item.count; }, 0);
   modalPrice.textContent = totalPrice + ' ₽';
-  saveCart();
+
 };
 function changeInput() {
   address.replaceWith(search);
@@ -315,13 +315,14 @@ function changeCount(event) {
     });
     if (target.classList.contains('counter-minus')) {
       food.count--;
-      if (food.count === 0) {
+      if (!food.count) {
         cart.splice(cart.indexOf(food), 1);
       };
     }
-    if (target.classList.contains('counter-plus')) food.count++;
-    renderCart();
+    if (target.classList.contains('counter-plus'))
+      food.count++;
   };
+  renderCart();
 };
 function init() {
 
@@ -372,7 +373,11 @@ function init() {
         })
       })
   });
-
+  cardsMenu.addEventListener('click', addToCart);
+  cartButton.addEventListener("click", function () {
+    renderCart();
+    toggleModal();
+  });
   modalBody.addEventListener('click', changeCount);
   buttonClearCart.addEventListener('click', function () {
     cart.length = 0;
@@ -382,11 +387,7 @@ function init() {
   getData('./db/partners.json').then(function (data) {
     data.forEach(createCardRestaurant)
   });
-  cardsMenu.addEventListener('click', addToCart);
-  cartButton.addEventListener("click", function () {
-    renderCart();
-    toggleModal();
-  });
+
   close.addEventListener("click", toggleModal);
   cardsRestaurants.addEventListener('click', openGoods);
   logo.addEventListener('click', function () {
