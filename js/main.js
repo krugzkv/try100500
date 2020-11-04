@@ -259,25 +259,29 @@ function openGoods(event) {
   }
 }
 function addToCart(event) {
-  saveCart();
-  const target = event.target;
-  const buttonAddToCart = target.closest('.button-add-cart');
-  if (buttonAddToCart) {
-    const card = target.closest(`.card`);
-    const title = card.querySelector('.card-title-reg').textContent;
-    const cost = card.querySelector('.card-price').textContent;
-    const id = buttonAddToCart.id;
-    const food = cart.find(function (item) {
-      return item.id === id;
-    });
-    if (food) {
-      food.count += 1;
-    } else cart.push({
-      id,
-      title,
-      cost,
-      count: 1
-    });
+  if (userName.classList.contains('loged')) {
+    saveCart();
+    const target = event.target;
+    const buttonAddToCart = target.closest('.button-add-cart');
+    if (buttonAddToCart) {
+      const card = target.closest(`.card`);
+      const title = card.querySelector('.card-title-reg').textContent;
+      const cost = card.querySelector('.card-price').textContent;
+      const id = buttonAddToCart.id;
+      const food = cart.find(function (item) {
+        return item.id === id;
+      });
+      if (food) {
+        food.count += 1;
+      } else cart.push({
+        id,
+        title,
+        cost,
+        count: 1
+      });
+    };
+  } else {
+    toggleModalAuth();
   };
 };
 function renderCart() {
